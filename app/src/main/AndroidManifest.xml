@@ -31,9 +31,6 @@
                 android:value="me.ipackfor.bahnhof.bahnhofinfo.TrainListActivity" />
         </activity>
 
-        <service
-            android:name=".sync.DepartureBoardSyncIntentService"
-            android:exported="false"></service>
     </application>
 
 </manifest>

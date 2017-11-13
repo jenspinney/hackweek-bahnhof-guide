@@ -1,7 +1,9 @@
 package me.ipackfor.bahnhof.bahnhofinfo;
 
+import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.Loader;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +18,7 @@ import android.widget.TextView;
 
 
 import me.ipackfor.bahnhof.bahnhofinfo.content.DepartureContent;
-import me.ipackfor.bahnhof.bahnhofinfo.sync.DepartureBoardSyncIntentService;
+import me.ipackfor.bahnhof.bahnhofinfo.content.DepartureListLoader;
 
 import java.util.List;
 
@@ -28,7 +30,7 @@ import java.util.List;
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
-public class TrainListActivity extends AppCompatActivity {
+public class TrainListActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<DepartureContent.DepartureItem>> {
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -66,11 +68,27 @@ public class TrainListActivity extends AppCompatActivity {
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
 
-        DepartureBoardSyncIntentService.startActionDownloadDepartureBoard(TrainListActivity.this, "Nürnberg" );
+        getLoaderManager().initLoader(0, null, this).forceLoad();
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, DepartureContent.ITEMS, mTwoPane));
+    }
+
+    @Override
+    public Loader<List<DepartureContent.DepartureItem>> onCreateLoader(int i, Bundle bundle) {
+        return new DepartureListLoader(TrainListActivity.this);
+    }
+
+
+    @Override
+    public void onLoadFinished(Loader<List<DepartureContent.DepartureItem>> loader, List<DepartureContent.DepartureItem> departureItems) {
+        DepartureContent.replaceItems(departureItems);
+    }
+
+    @Override
+    public void onLoaderReset(Loader<List<DepartureContent.DepartureItem>> loader) {
+
     }
 
     public static class SimpleItemRecyclerViewAdapter

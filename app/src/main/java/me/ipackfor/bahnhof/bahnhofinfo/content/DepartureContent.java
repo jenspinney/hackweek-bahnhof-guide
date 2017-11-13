@@ -10,31 +10,18 @@ public class DepartureContent {
 
     public static final Map<String, DepartureItem> ITEM_MAP = new HashMap<String, DepartureItem>();
 
-    private static final int COUNT = 25;
+    public static void replaceItems(List<DepartureItem> items) {
+        ITEMS.clear();
+        ITEM_MAP.clear();
 
-    static {
-        // Add some sample items.
-        for (int i = 1; i <= COUNT; i++) {
-            addItem(createDepartureItem(i));
+        for (DepartureItem item : items) {
+            addItem(item);
         }
     }
 
     private static void addItem(DepartureItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
-    }
-
-    private static DepartureItem createDepartureItem(int position) {
-        return new DepartureItem(String.valueOf(position), "Item " + position, makeDetails(position));
-    }
-
-    private static String makeDetails(int position) {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Details about Item: ").append(position);
-        for (int i = 0; i < position; i++) {
-            builder.append("\nMore details information here.");
-        }
-        return builder.toString();
     }
 
     /**
