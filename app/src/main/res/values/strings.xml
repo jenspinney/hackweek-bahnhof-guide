@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Bahnhof Info</string>
+    <string name="title_train_detail">Train Detail</string>
+</resources>
