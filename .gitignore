@@ -7,3 +7,4 @@
 /build
 /captures
 .externalNativeBuild
+secret_strings.xml

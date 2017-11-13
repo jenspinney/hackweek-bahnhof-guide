@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 
 import me.ipackfor.bahnhof.bahnhofinfo.dummy.DummyContent;
+import me.ipackfor.bahnhof.bahnhofinfo.sync.DepartureBoardSyncIntentService;
 
 import java.util.List;
 
@@ -64,6 +65,8 @@ public class TrainListActivity extends AppCompatActivity {
         View recyclerView = findViewById(R.id.train_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
+
+        DepartureBoardSyncIntentService.startActionDownloadDepartureBoard(TrainListActivity.this, "Nürnberg" );
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
