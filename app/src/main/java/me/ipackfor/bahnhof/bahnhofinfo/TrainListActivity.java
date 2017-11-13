@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import me.ipackfor.bahnhof.bahnhofinfo.dummy.DummyContent;
+import me.ipackfor.bahnhof.bahnhofinfo.content.DepartureContent;
 import me.ipackfor.bahnhof.bahnhofinfo.sync.DepartureBoardSyncIntentService;
 
 import java.util.List;
@@ -70,19 +70,19 @@ public class TrainListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, mTwoPane));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, DepartureContent.ITEMS, mTwoPane));
     }
 
     public static class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
         private final TrainListActivity mParentActivity;
-        private final List<DummyContent.DummyItem> mValues;
+        private final List<DepartureContent.DepartureItem> mValues;
         private final boolean mTwoPane;
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DummyContent.DummyItem item = (DummyContent.DummyItem) view.getTag();
+                DepartureContent.DepartureItem item = (DepartureContent.DepartureItem) view.getTag();
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
                     arguments.putString(TrainDetailFragment.ARG_ITEM_ID, item.id);
@@ -102,7 +102,7 @@ public class TrainListActivity extends AppCompatActivity {
         };
 
         SimpleItemRecyclerViewAdapter(TrainListActivity parent,
-                                      List<DummyContent.DummyItem> items,
+                                      List<DepartureContent.DepartureItem> items,
                                       boolean twoPane) {
             mValues = items;
             mParentActivity = parent;

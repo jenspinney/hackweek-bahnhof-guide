@@ -1,44 +1,31 @@
-package me.ipackfor.bahnhof.bahnhofinfo.dummy;
+package me.ipackfor.bahnhof.bahnhofinfo.content;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Helper class for providing sample content for user interfaces created by
- * Android template wizards.
- * <p>
- * TODO: Replace all uses of this class before publishing your app.
- */
-public class DummyContent {
+public class DepartureContent {
+    public static final List<DepartureItem> ITEMS = new ArrayList<DepartureItem>();
 
-    /**
-     * An array of sample (dummy) items.
-     */
-    public static final List<DummyItem> ITEMS = new ArrayList<DummyItem>();
-
-    /**
-     * A map of sample (dummy) items, by ID.
-     */
-    public static final Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
+    public static final Map<String, DepartureItem> ITEM_MAP = new HashMap<String, DepartureItem>();
 
     private static final int COUNT = 25;
 
     static {
         // Add some sample items.
         for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
+            addItem(createDepartureItem(i));
         }
     }
 
-    private static void addItem(DummyItem item) {
+    private static void addItem(DepartureItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
 
-    private static DummyItem createDummyItem(int position) {
-        return new DummyItem(String.valueOf(position), "Item " + position, makeDetails(position));
+    private static DepartureItem createDepartureItem(int position) {
+        return new DepartureItem(String.valueOf(position), "Item " + position, makeDetails(position));
     }
 
     private static String makeDetails(int position) {
@@ -51,14 +38,14 @@ public class DummyContent {
     }
 
     /**
-     * A dummy item representing a piece of content.
+     * An item representing a single departure.
      */
-    public static class DummyItem {
+    public static class DepartureItem {
         public final String id;
         public final String content;
         public final String details;
 
-        public DummyItem(String id, String content, String details) {
+        public DepartureItem(String id, String content, String details) {
             this.id = id;
             this.content = content;
             this.details = details;
