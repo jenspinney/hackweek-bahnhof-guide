@@ -1,5 +1,7 @@
 package me.ipackfor.bahnhof.bahnhofinfo.content;
 
+import android.util.Log;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -10,17 +12,22 @@ import java.util.List;
 import java.util.Map;
 
 public class DepartureContent {
+    private static final String TAG = DepartureContent.class.getSimpleName();
+
     public static final List<DepartureItem> ITEMS = new ArrayList<DepartureItem>();
 
     public static final Map<String, DepartureItem> ITEM_MAP = new HashMap<String, DepartureItem>();
 
     public static void replaceItems(List<DepartureItem> items) {
+        Log.d(TAG, "replace-items");
         ITEMS.clear();
         ITEM_MAP.clear();
 
         for (DepartureItem item : items) {
             addItem(item);
         }
+
+        Log.d(TAG, "replace-items-done");
     }
 
     private static void addItem(DepartureItem item) {

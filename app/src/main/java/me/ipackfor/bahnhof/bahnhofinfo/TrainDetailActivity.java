@@ -17,6 +17,7 @@ import android.view.MenuItem;
  * in a {@link TrainListActivity}.
  */
 public class TrainDetailActivity extends AppCompatActivity {
+    private static final String TAG = TrainDetailActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

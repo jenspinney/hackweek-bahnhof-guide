@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,12 +32,15 @@ import java.util.List;
  * item details side-by-side using two vertical panes.
  */
 public class TrainListActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<DepartureContent.DepartureItem>> {
+    private static final String TAG = TrainListActivity.class.getSimpleName();
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
     private boolean mTwoPane;
+
+    private RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +70,8 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
 
         View recyclerView = findViewById(R.id.train_list);
         assert recyclerView != null;
-        setupRecyclerView((RecyclerView) recyclerView);
+        mRecyclerView = (RecyclerView) recyclerView;
+        setupRecyclerView(mRecyclerView);
 
         getLoaderManager().initLoader(0, null, this).forceLoad();
     }
@@ -77,18 +82,22 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
 
     @Override
     public Loader<List<DepartureContent.DepartureItem>> onCreateLoader(int i, Bundle bundle) {
+        Log.d(TAG, "on-create-loader");
         return new DepartureListLoader(TrainListActivity.this);
     }
 
 
     @Override
     public void onLoadFinished(Loader<List<DepartureContent.DepartureItem>> loader, List<DepartureContent.DepartureItem> departureItems) {
+        Log.d(TAG, "on-load-finished");
         DepartureContent.replaceItems(departureItems);
+        mRecyclerView.getAdapter().notifyDataSetChanged();
+
     }
 
     @Override
     public void onLoaderReset(Loader<List<DepartureContent.DepartureItem>> loader) {
-
+        Log.d(TAG, "on-load-reset");
     }
 
     public static class SimpleItemRecyclerViewAdapter
