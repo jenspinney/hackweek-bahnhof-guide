@@ -12,17 +12,18 @@ public class DepartureListLoader extends AsyncTaskLoader<List<DepartureContent.D
     private static final String TAG = DepartureListLoader.class.getSimpleName();
 
     private String mApiKey;
+    private Context mContext;
 
     public DepartureListLoader(Context context) {
         super(context);
 
         Log.d(TAG, "Constructor");
-        mApiKey = context.getString(R.string.db_api_key);
+        mContext = context;
     }
 
     @Override
     public List<DepartureContent.DepartureItem> loadInBackground() {
         Log.d(TAG, "load-in-background");
-        return new FetchDepartureBoardTask("", mApiKey).Run();
+        return FetchDepartureBoardTaskFactory.create(mContext, "").Run();
     }
 }

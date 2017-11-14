@@ -1,6 +1,10 @@
 package me.ipackfor.bahnhof.bahnhofinfo.content;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,11 +35,14 @@ public class DepartureContent {
         public final String id;
         public final String content;
         public final String details;
+        public final String departureTime;
 
-        public DepartureItem(String id, String content, String details) {
+        public DepartureItem(String id, String content, String details, Date departureTime) {
             this.id = id;
             this.content = content;
             this.details = details;
+
+            this.departureTime = new SimpleDateFormat("dd MMM HH:mm").format(departureTime);
         }
 
         @Override

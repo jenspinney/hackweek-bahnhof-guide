@@ -136,7 +136,7 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mIdView.setText(mValues.get(position).id);
+            holder.mDepartureTimeView.setText(mValues.get(position).departureTime);
             holder.mContentView.setText(mValues.get(position).content);
 
             holder.itemView.setTag(mValues.get(position));
@@ -149,12 +149,12 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
-            final TextView mIdView;
+            final TextView mDepartureTimeView;
             final TextView mContentView;
 
             ViewHolder(View view) {
                 super(view);
-                mIdView = (TextView) view.findViewById(R.id.id_text);
+                mDepartureTimeView = (TextView) view.findViewById(R.id.departure_time);
                 mContentView = (TextView) view.findViewById(R.id.content);
             }
         }

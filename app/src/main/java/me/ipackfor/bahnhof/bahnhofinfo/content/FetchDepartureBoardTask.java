@@ -11,6 +11,8 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,7 +20,7 @@ import java.util.Scanner;
 import me.ipackfor.bahnhof.bahnhofinfo.R;
 import me.ipackfor.bahnhof.bahnhofinfo.content.DepartureContent;
 
-public class FetchDepartureBoardTask {
+public class FetchDepartureBoardTask implements IFetchDepartureBoardTask {
     private static final String TAG = FetchDepartureBoardTask.class.getSimpleName();
 
     private static final String DEPARTURE_BOARD_URL = "https://api.deutschebahn.com/fahrplan-plus/v1/departureBoard/8000284?date=2017-11-13";
@@ -68,7 +70,11 @@ public class FetchDepartureBoardTask {
             for (int i=0; i < departuresJSON.length(); i++) {
                 JSONObject departureInfo = departuresJSON.getJSONObject(i);
                 String trainName = departureInfo.getString("name");
-                items.add(new DepartureContent.DepartureItem(departureInfo.getString("detailsId"), trainName, "Track: " + departureInfo.getString("track")));
+                String id = departureInfo.getString("detailsId");
+                String trackInfo = "Track: " + departureInfo.getString("track");
+                Date departureTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").parse(departureInfo.getString("dateTime"));
+
+                items.add(new DepartureContent.DepartureItem(id, trainName, trackInfo, departureTime));
                 /* departureInfo has:
                   {
     "name": "ICE 1617",
