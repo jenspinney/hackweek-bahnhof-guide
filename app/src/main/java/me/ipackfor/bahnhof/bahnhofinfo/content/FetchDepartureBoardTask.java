@@ -68,27 +68,8 @@ public class FetchDepartureBoardTask implements IFetchDepartureBoardTask {
             JSONArray departuresJSON = new JSONArray(response);
 
             for (int i=0; i < departuresJSON.length(); i++) {
-                JSONObject departureInfo = departuresJSON.getJSONObject(i);
-                String trainName = departureInfo.getString("name");
-                String id = departureInfo.getString("detailsId");
-                String trackInfo = "Track: " + departureInfo.getString("track");
-                Date departureTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm").parse(departureInfo.getString("dateTime"));
-
-                items.add(new DepartureContent.DepartureItem(id, trainName, trackInfo, departureTime));
-                /* departureInfo has:
-                  {
-    "name": "ICE 1617",
-    "type": "ICE",
-    "boardId": 8000284,
-    "stopId": 8000284,
-    "stopName": "Nürnberg Hbf",
-    "dateTime": "2017-11-13T00:31",
-    "track": "8",
-    "detailsId": "614604%2F208451%2F397100%2F6318%2F80%3fstation_evaId%3D8000284"
-  }
-                 */
+                items.add(new DepartureContent.DepartureItem(departuresJSON.getJSONObject(i)));
             }
-
 
             Log.d(TAG, "Run success! " + departuresJSON.length() + " items found.");
         } catch (MalformedURLException e) {

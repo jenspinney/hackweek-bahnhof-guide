@@ -92,7 +92,6 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
         Log.d(TAG, "on-load-finished");
         DepartureContent.replaceItems(departureItems);
         mRecyclerView.getAdapter().notifyDataSetChanged();
-
     }
 
     @Override
@@ -145,8 +144,8 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mDepartureTimeView.setText(mValues.get(position).departureTime);
-            holder.mContentView.setText(mValues.get(position).content);
+            holder.mDepartureTimeView.setText(DepartureContent.DepartureItem.DATE_FORMAT.format(mValues.get(position).departureTime));
+            holder.mContentView.setText(mValues.get(position).name);
 
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);
