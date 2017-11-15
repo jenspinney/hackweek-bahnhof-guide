@@ -14,6 +14,6 @@ class FetchDepartureBoardTaskFactory {
             return new FetchDepartureBoardTask(location, apiKey);
         }
 
-        return new LoadDummyDepartureBoardTask();
+        return new LoadDummyDepartureBoardTask(location, context.getAssets());
     }
 }

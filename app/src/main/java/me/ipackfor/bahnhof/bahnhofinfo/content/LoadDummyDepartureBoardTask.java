@@ -1,10 +1,16 @@
 package me.ipackfor.bahnhof.bahnhofinfo.content;
 
+import android.content.res.AssetManager;
+import android.util.JsonReader;
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedList;
@@ -13,49 +19,34 @@ import java.util.Random;
 
 public class LoadDummyDepartureBoardTask implements IFetchDepartureBoardTask {
     private static final String TAG = LoadDummyDepartureBoardTask.class.getSimpleName();
+    private final String mLocation;
+    private final AssetManager mAssetManager;
 
-    public LoadDummyDepartureBoardTask() {
+    public LoadDummyDepartureBoardTask(String location, AssetManager assetManager) {
+        mLocation = location;
+        mAssetManager = assetManager;
     }
 
     public List<DepartureContent.DepartureItem> Run() {
         Log.d(TAG, "Run");
-        LinkedList<DepartureContent.DepartureItem> list = new LinkedList<DepartureContent.DepartureItem>();
-        Random r = new Random();
+        LinkedList<DepartureContent.DepartureItem> list = new LinkedList<>();
 
         try {
-            for (int i = 0; i < 50; i++)
-                list.add(generateRandomItem(r));
-
-            Log.d(TAG, "Run succeeded");
-        } catch (Exception e) {
-           Log.e(TAG, e.getMessage());
-           e.printStackTrace();
+            InputStream is = mAssetManager.open("testdata/v1/departureBoard/8000284?date=2017-11-15");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            JSONArray jsonArray = new JSONArray(new String(buffer, "UTF-8"));
+            for (int i = 0; i < jsonArray.length(); i++) {
+                list.add(new DepartureContent.DepartureItem(jsonArray.getJSONObject(i)));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         } finally {
             return list;
         }
-    }
-
-    private DepartureContent.DepartureItem generateRandomItem(Random r) {
-        JSONObject obj = new JSONObject();
-
-        try {
-            obj = obj
-                    .put(DepartureContent.DepartureItem.NAME, "ICE " + r.nextInt(2000) + 1)
-                    .put(DepartureContent.DepartureItem.TYPE, "ICE")
-                    .put(DepartureContent.DepartureItem.BOARD_ID, 8000284)
-                    .put(DepartureContent.DepartureItem.STOP_ID, 8000284)
-                    .put(DepartureContent.DepartureItem.STOP_NAME, "Nürnberg Hbf")
-                    .put(DepartureContent.DepartureItem.DATE_TIME, DepartureContent.DepartureItem.DATE_FORMAT.format(getRandomDate(r)))
-                    .put(DepartureContent.DepartureItem.TRACK, String.valueOf(r.nextInt(20) + 1))
-                    .put(DepartureContent.DepartureItem.DETAILS_ID, java.util.UUID.randomUUID());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return new DepartureContent.DepartureItem(obj);
-    }
-
-    private Date getRandomDate(Random r) {
-        return new Date((long) (1293861599+r.nextDouble()*60*60*24*365*1000));
     }
 }

@@ -59,9 +59,9 @@ public class TrainDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.train_detail, container, false);
 
-        // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.train_detail)).setText(mItem.platform);
+            ((TextView) rootView.findViewById(R.id.train_track)).setText(mItem.platform);
+            ((TextView) rootView.findViewById(R.id.train_destination)).setText("DESTINATION"); // TODO
         }
 
         return rootView;

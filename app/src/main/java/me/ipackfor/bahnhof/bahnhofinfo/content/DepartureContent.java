@@ -73,37 +73,29 @@ public class DepartureContent {
   }
                  */
         public DepartureItem(JSONObject obj) {
-            String id = "";
-            String name = "";
-            String type = "";
-            String boardId = "";
-            String stopId = "";
-            String stopName = "";
-            String platform = "";
-            Date departureTime = null;
-
-            try {
-                id = obj.getString(DETAILS_ID);
-                name = obj.getString(NAME);
-                type = obj.getString(TYPE);
-                boardId = obj.getString(BOARD_ID);
-                stopId = obj.getString(STOP_ID);
-                stopName = obj.getString(STOP_NAME);
-                platform = obj.getString(TRACK);
-                departureTime = DATE_FORMAT.parse(obj.getString(DATE_TIME));
-            } catch (JSONException e) {
-                e.printStackTrace();
+            Date departureTime;
+            this.id = getStringOrDefault(obj, DETAILS_ID);
+            this.name = getStringOrDefault(obj, NAME);
+            this.type = getStringOrDefault(obj, TYPE);
+            this.boardId = getStringOrDefault(obj, BOARD_ID);
+            this.stopId = getStringOrDefault(obj, STOP_ID);
+            this.stopName = getStringOrDefault(obj, STOP_NAME);
+            this.platform = getStringOrDefault(obj, TRACK);
+            try{
+                departureTime = DATE_FORMAT.parse(getStringOrDefault(obj, DATE_TIME));
             } catch (ParseException e) {
                 e.printStackTrace();
-            } finally {
-                this.id = id;
-                this.name = name;
-                this.type = type;
-                this.boardId = boardId;
-                this.stopId = stopId;
-                this.stopName = stopName;
-                this.platform = platform;
-                this.departureTime = departureTime;
+                departureTime = new Date();
+            }
+            this.departureTime = departureTime;
+        }
+
+        private String getStringOrDefault(JSONObject obj, String key) {
+            try {
+                return obj.getString(key);
+            } catch (JSONException e) {
+                e.printStackTrace();
+                return "";
             }
         }
 
