@@ -1,0 +1,194 @@
+[
+  {
+    "name": "EN 40420",
+    "type": "EN",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T02:00",
+    "track": "4",
+    "detailsId": "52506%2F17559%2F218366%2F91681%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "EN 490",
+    "boardId": 8000284,
+    "stopId": null,
+    "dateTime": "2017-11-15T02:00",
+    "track": "4",
+    "detailsId": "304635%2F123918%2F487940%2F142425%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "EN 40490",
+    "type": "EN",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T02:46",
+    "track": "5",
+    "detailsId": "460773%2F153849%2F950734%2F321776%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "EN 420",
+    "boardId": 8000284,
+    "stopId": null,
+    "dateTime": "2017-11-15T02:46",
+    "track": "5",
+    "detailsId": "743940%2F269929%2F960258%2F232149%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "EN 40421",
+    "type": "EN",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T03:07",
+    "track": "9",
+    "detailsId": "852870%2F284465%2F859984%2F145702%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "EN 491",
+    "boardId": 8000284,
+    "stopId": null,
+    "dateTime": "2017-11-15T03:07",
+    "track": "9",
+    "detailsId": "758634%2F275279%2F127602%2F189077%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "EN 40491",
+    "type": "EN",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T03:42",
+    "track": "8",
+    "detailsId": "958389%2F319727%2F472938%2F82994%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "EN 421",
+    "boardId": 8000284,
+    "stopId": null,
+    "dateTime": "2017-11-15T03:42",
+    "track": "8",
+    "detailsId": "392283%2F152771%2F963068%2F350773%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "IC 2028",
+    "type": "IC",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T05:27",
+    "track": "6",
+    "detailsId": "522363%2F180268%2F494938%2F73348%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "ICE 888",
+    "type": "ICE",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T05:32",
+    "track": "7",
+    "detailsId": "557247%2F203762%2F386446%2F7474%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "IC 2164",
+    "type": "IC",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T05:38",
+    "track": "15",
+    "detailsId": "57189%2F26342%2F885446%2F423660%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "IC 2287",
+    "type": "IC",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T05:47",
+    "track": "8",
+    "detailsId": "989787%2F338712%2F291680%2F184089%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "ICE 823",
+    "type": "ICE",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T05:58",
+    "track": "12",
+    "detailsId": "264375%2F105266%2F384642%2F104196%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "ICE 822",
+    "type": "ICE",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T06:00",
+    "track": "7",
+    "detailsId": "758124%2F269819%2F236802%2F134307%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "ICE 989",
+    "type": "ICE",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T06:15",
+    "track": "8",
+    "detailsId": "514485%2F190576%2F806178%2F231594%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "ICE 985",
+    "type": "ICE",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T06:28",
+    "track": "9",
+    "detailsId": "674634%2F243945%2F74602%2F187577%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "ICE 1514",
+    "type": "ICE",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T06:30",
+    "track": "7",
+    "detailsId": "571554%2F192893%2F349464%2F15786%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "ICE 634",
+    "type": "ICE",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T06:34",
+    "track": "6",
+    "detailsId": "377922%2F140930%2F689744%2F218898%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "ICE 784",
+    "type": "ICE",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T06:34",
+    "track": "6",
+    "detailsId": "944511%2F331602%2F83320%2F273177%2F80%3fstation_evaId%3D8000284"
+  },
+  {
+    "name": "ICE 820",
+    "type": "ICE",
+    "boardId": 8000284,
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "dateTime": "2017-11-15T07:00",
+    "track": "6",
+    "detailsId": "472224%2F174484%2F894194%2F289689%2F80%3fstation_evaId%3D8000284"
+  }
+]

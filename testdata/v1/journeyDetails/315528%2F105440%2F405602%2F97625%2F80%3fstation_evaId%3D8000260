@@ -1,0 +1,999 @@
+[
+  {
+    "stopId": 8002553,
+    "stopName": "Hamburg-Altona",
+    "lat": "53.552697",
+    "lon": "9.935175",
+    "depTime": "20:14",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "RP",
+        "priority": "185",
+        "text": "Subject to compulsory reservation"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8002548,
+    "stopName": "Hamburg Dammtor",
+    "lat": "53.560751",
+    "lon": "9.989569",
+    "arrTime": "20:20",
+    "depTime": "20:22",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "RP",
+        "priority": "185",
+        "text": "Subject to compulsory reservation"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8002549,
+    "stopName": "Hamburg Hbf",
+    "lat": "53.552733",
+    "lon": "10.006909",
+    "arrTime": "20:26",
+    "depTime": "20:29",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "RP",
+        "priority": "185",
+        "text": "Subject to compulsory reservation"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8000152,
+    "stopName": "Hannover Hbf",
+    "lat": "52.376764",
+    "lon": "9.741017",
+    "arrTime": "21:54",
+    "depTime": "21:57",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "RP",
+        "priority": "185",
+        "text": "Subject to compulsory reservation"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8000128,
+    "stopName": "Göttingen",
+    "lat": "51.536812",
+    "lon": "9.926069",
+    "arrTime": "22:57",
+    "depTime": "22:59",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "RP",
+        "priority": "185",
+        "text": "Subject to compulsory reservation"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "lat": "49.801795",
+    "lon": "9.935777",
+    "arrTime": "01:31",
+    "depTime": "01:33",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "RP",
+        "priority": "185",
+        "text": "Subject to compulsory reservation"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8000284,
+    "stopName": "Nürnberg Hbf",
+    "lat": "49.445615",
+    "lon": "11.082989",
+    "arrTime": "02:32",
+    "depTime": "03:42",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "RP",
+        "priority": "185",
+        "text": "Subject to compulsory reservation"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8000013,
+    "stopName": "Augsburg Hbf",
+    "lat": "48.365444",
+    "lon": "10.885568",
+    "arrTime": "06:26",
+    "depTime": "06:29",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "RP",
+        "priority": "185",
+        "text": "Subject to compulsory reservation"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8000261,
+    "stopName": "München Hbf",
+    "lat": "48.140229",
+    "lon": "11.558339",
+    "arrTime": "07:05",
+    "depTime": "07:29",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "RP",
+        "priority": "185",
+        "text": "Subject to compulsory reservation"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8100001,
+    "stopName": "Kufstein",
+    "lat": "47.583077",
+    "lon": "12.165551",
+    "arrTime": "08:25",
+    "depTime": "08:27",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "RP",
+        "priority": "185",
+        "text": "Subject to compulsory reservation"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8100099,
+    "stopName": "Wörgl Hbf",
+    "lat": "47.491801",
+    "lon": "12.060584",
+    "arrTime": "08:36",
+    "depTime": "08:39",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8100102,
+    "stopName": "Jenbach",
+    "lat": "47.388452",
+    "lon": "11.778458",
+    "arrTime": "08:53",
+    "depTime": "08:55",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  },
+  {
+    "stopId": 8100108,
+    "stopName": "Innsbruck Hbf",
+    "lat": "47.263277",
+    "lon": "11.401001",
+    "arrTime": "09:14",
+    "train": "EN 40491",
+    "type": "EN",
+    "operator": "DPN",
+    "notes": [
+      {
+        "key": "ZN",
+        "priority": "-1",
+        "text": "nightjet"
+      },
+      {
+        "key": "AT",
+        "priority": "250",
+        "text": "Train conveys cars"
+      },
+      {
+        "key": "FK",
+        "priority": "260",
+        "text": "Number of bicycles conveyed limited"
+      },
+      {
+        "key": "FR",
+        "priority": "260",
+        "text": "Bicycles conveyed - subject to reservation"
+      },
+      {
+        "key": "J2",
+        "priority": "300",
+        "text": "2nd class only seated accommodation"
+      },
+      {
+        "key": "CT",
+        "priority": "320",
+        "text": "Comfortticket (IRT Integrated Reservation Ticket)"
+      },
+      {
+        "key": "OJ",
+        "priority": "320",
+        "text": "ÖBB Nightjet (www.nightjet.com)"
+      },
+      {
+        "key": "LW",
+        "priority": "400",
+        "text": "Couchettes"
+      },
+      {
+        "key": "SW",
+        "priority": "400",
+        "text": "Sleeping-car"
+      },
+      {
+        "key": "MN",
+        "priority": "450",
+        "text": "snacks and beverages available from sleeper/couchette attendant"
+      },
+      {
+        "key": "OC",
+        "priority": "560",
+        "text": "WC accessible for wheelchair"
+      },
+      {
+        "key": "OA",
+        "priority": "560",
+        "text": "Wheelchair space - For advance notification, call +43 (0) 5 1717"
+      }
+    ]
+  }
+]

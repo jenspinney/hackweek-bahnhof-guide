@@ -1,0 +1,208 @@
+[
+  {
+    "name": "EN 40491",
+    "type": "EN",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T01:33",
+    "track": "3",
+    "detailsId": "315528%2F105440%2F405602%2F97625%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "EN 491",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T01:33",
+    "track": "3",
+    "detailsId": "601929%2F223044%2F347862%2F26712%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "EN 40421",
+    "type": "EN",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T01:36",
+    "track": "3",
+    "detailsId": "167625%2F56050%2F646062%2F267156%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "EN 421",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T01:36",
+    "track": "3",
+    "detailsId": "794514%2F286848%2F374540%2F77568%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "EN 40420",
+    "type": "EN",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T03:00",
+    "track": "5",
+    "detailsId": "942096%2F314089%2F682490%2F27213%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "EN 490",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T03:00",
+    "track": "5",
+    "detailsId": "281673%2F116264%2F924366%2F368292%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 824",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T05:55",
+    "track": "9",
+    "detailsId": "611769%2F221069%2F407462%2F192%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 827",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T06:04",
+    "track": "4",
+    "detailsId": "806340%2F285964%2F134042%2F201759%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "IC 2028",
+    "type": "IC",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T06:25",
+    "track": "4",
+    "detailsId": "795414%2F271285%2F896698%2F183211%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 888",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T06:30",
+    "track": "5",
+    "detailsId": "704397%2F252812%2F294058%2F87770%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 822",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T06:55",
+    "track": "4",
+    "detailsId": "32103%2F27812%2F978022%2F478310%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 521",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T07:04",
+    "track": "2",
+    "detailsId": "902634%2F313490%2F112450%2F244653%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 634",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T07:29",
+    "track": "4",
+    "detailsId": "872850%2F305906%2F897742%2F157921%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 781",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T07:29",
+    "track": "3",
+    "detailsId": "874251%2F308083%2F778748%2F97957%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 784",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T07:29",
+    "track": "4",
+    "detailsId": "501141%2F183812%2F743978%2F204942%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 21",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T07:33",
+    "track": "2",
+    "detailsId": "196554%2F86181%2F240090%2F54527%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 820",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T07:55",
+    "track": "4",
+    "detailsId": "758592%2F269940%2F201704%2F152012%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 523",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T08:04",
+    "track": "3",
+    "detailsId": "877377%2F305150%2F620108%2F17595%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "IC 2226",
+    "type": "IC",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T08:26",
+    "track": "4",
+    "detailsId": "767208%2F264035%2F479364%2F16054%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 581",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T08:30",
+    "track": "3",
+    "detailsId": "26193%2F22446%2F837010%2F409774%2F80%3fstation_evaId%3D8000260"
+  },
+  {
+    "name": "ICE 886",
+    "type": "ICE",
+    "boardId": 8000260,
+    "stopId": 8000260,
+    "stopName": "Würzburg Hbf",
+    "dateTime": "2017-11-15T08:30",
+    "track": "5",
+    "detailsId": "238140%2F97345%2F541556%2F191398%2F80%3fstation_evaId%3D8000260"
+  }
+]
