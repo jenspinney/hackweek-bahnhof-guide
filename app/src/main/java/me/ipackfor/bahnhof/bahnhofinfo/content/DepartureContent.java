@@ -1,12 +1,6 @@
 package me.ipackfor.bahnhof.bahnhofinfo.content;
 
-import android.support.annotation.NonNull;
 import android.util.Log;
-
-import com.alibaba.fastjson.JSON;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -38,17 +32,7 @@ public class DepartureContent {
 
     private static void addItem(DepartureItem item) {
         ITEMS.add(item);
-        ITEM_MAP.put(item.id, item);
-    }
-
-    @NonNull
-    public static LinkedList<DepartureItem> createDepartureItemsFromJSONString(String jsonArrayString) {
-        List<DepartureBoardJSONObject> objs = JSON.parseArray(jsonArrayString, DepartureBoardJSONObject.class);
-        LinkedList<DepartureItem> items = new LinkedList<>();
-        for (DepartureBoardJSONObject obj: objs) {
-            items.add(new DepartureItem(obj));
-        }
-        return items;
+        ITEM_MAP.put(item.getId(), item);
     }
 
     /**
@@ -56,38 +40,83 @@ public class DepartureContent {
      */
     public static class DepartureItem {
         public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
-        public final String id;
-        public final String name;
-        public final String type;
-        public final String boardId;
-        public final String stopId;
-        public final String stopName;
-        public final Date departureTime;
-        public final String platform;
 
+        private final DepartureBoardJSONObject mTopLevelObject;
+        private final List<JourneyDetailItem> mDetails;
 
-        public DepartureItem(DepartureBoardJSONObject obj) {
-            this.id = obj.getDetailsId();
-            this.name = obj.getName();
-            this.type = obj.getType();
-            this.boardId = String.valueOf(obj.getBoardId());
-            this.stopId = String.valueOf(obj.getStopId());
-            this.stopName = obj.getStopName();
-            this.platform = obj.getTrack();
+        private Date mDepartureTime = null;
 
-            Date departureTime;
-            try{
-                departureTime = DATE_FORMAT.parse(obj.getDateTime());
-            } catch (ParseException e) {
-                e.printStackTrace();
-                departureTime = new Date();
-            }
-            this.departureTime = departureTime;
+        public DepartureItem(DepartureBoardJSONObject obj, List<JourneyDetailItem> details) {
+            mTopLevelObject = obj;
+            mDetails = details;
         }
 
         @Override
         public String toString() {
-            return name;
+            return getName();
+        }
+
+        public List<String> getStopNamesInJourney() {
+            List<String> result = new LinkedList<>();
+            for (JourneyDetailItem detail:
+                 mDetails) {
+                result.add(detail.getStopName());
+            }
+            return result;
+        }
+
+        public String getId() {
+            return mTopLevelObject.getDetailsId();
+        }
+
+        public String getName() {
+            return mTopLevelObject.getName();
+        }
+
+        public String getType() {
+            return mTopLevelObject.getType();
+        }
+
+        public String getBoardId() {
+            return String.valueOf(mTopLevelObject.getBoardId());
+        }
+
+        public String getStopId() {
+            return String.valueOf(mTopLevelObject.getStopId());
+        }
+
+        public String getStopName() {
+            return String.valueOf(mTopLevelObject.getStopName());
+        }
+
+        public Date getDepartureTime() {
+            if (mDepartureTime != null) {
+                return mDepartureTime;
+            }
+
+            try{
+                mDepartureTime = DATE_FORMAT.parse(mTopLevelObject.getDateTime());
+            } catch (ParseException e) {
+                e.printStackTrace();
+                mDepartureTime = new Date();
+            }
+            return mDepartureTime;
+        }
+
+        public String getPlatform() {
+            return mTopLevelObject.getTrack();
+        }
+
+        public String getDestinationStopName() {
+            if (mDetails.size() < 1) {
+                return "Unknown";
+            }
+
+            return mDetails.get(mDetails.size() - 1).getStopName();
+        }
+
+        public List<JourneyDetailItem> getJourneyDetails() {
+            return mDetails;
         }
     }
 }

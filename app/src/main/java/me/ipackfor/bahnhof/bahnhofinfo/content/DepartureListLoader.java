@@ -10,12 +10,14 @@ import me.ipackfor.bahnhof.bahnhofinfo.R;
 
 public class DepartureListLoader extends AsyncTaskLoader<List<DepartureContent.DepartureItem>>{
     private static final String TAG = DepartureListLoader.class.getSimpleName();
+    private final String mLocationID;
 
     private String mApiKey;
     private Context mContext;
 
-    public DepartureListLoader(Context context) {
+    public DepartureListLoader(Context context, String locationID) {
         super(context);
+        this.mLocationID = locationID;
 
         Log.d(TAG, "Constructor");
         mContext = context;
@@ -24,6 +26,6 @@ public class DepartureListLoader extends AsyncTaskLoader<List<DepartureContent.D
     @Override
     public List<DepartureContent.DepartureItem> loadInBackground() {
         Log.d(TAG, "load-in-background");
-        return FetchDepartureBoardTaskFactory.create(mContext, "8000284").Run();
+        return FetchDepartureBoardTaskFactory.create(mContext, mLocationID).Run();
     }
 }

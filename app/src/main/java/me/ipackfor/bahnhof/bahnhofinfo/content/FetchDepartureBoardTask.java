@@ -2,6 +2,8 @@ package me.ipackfor.bahnhof.bahnhofinfo.content;
 
 import android.util.Log;
 
+import com.alibaba.fastjson.JSON;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -56,7 +58,12 @@ public class FetchDepartureBoardTask implements IFetchDepartureBoardTask {
             }
             scanner.close();
 
-            LinkedList<DepartureContent.DepartureItem> items = DepartureContent.createDepartureItemsFromJSONString(response);
+            List<DepartureBoardJSONObject> objs = JSON.parseArray(response, DepartureBoardJSONObject.class);
+            LinkedList<DepartureContent.DepartureItem> items2 = new LinkedList<>();
+            for (DepartureBoardJSONObject obj: objs) {
+                items2.add(new DepartureContent.DepartureItem(obj, new LinkedList<JourneyDetailItem>()));
+            }
+            LinkedList<DepartureContent.DepartureItem> items = items2;
 
             items1.addAll(items);
 

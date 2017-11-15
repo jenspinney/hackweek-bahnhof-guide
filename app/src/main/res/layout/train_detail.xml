@@ -1,28 +1,19 @@
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/train_destination"
         style="?android:attr/textAppearanceLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="77dp"
         android:padding="16dp"
         android:textAllCaps="true"
-        android:textIsSelectable="true"
-        app:layout_constraintBottom_toTopOf="@+id/train_track"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/train_track"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintVertical_chainStyle="packed"
+        android:textIsSelectable="false"
         tools:context="me.ipackfor.bahnhof.bahnhofinfo.TrainDetailFragment"
         tools:text="Destination" />
 
@@ -33,11 +24,20 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:textIsSelectable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/train_destination"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
         tools:context="me.ipackfor.bahnhof.bahnhofinfo.TrainDetailFragment"
         tools:text="Track" />
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/stops_list"
+        android:name="me.ipackfor.bahnhof.bahnhofinfo.TrainDetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager"
+        tools:context="me.ipackfor.bahnhof.bahnhofinfo.TrainDetailFragment"
+        tools:listitem="@layout/train_detail_content" >
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

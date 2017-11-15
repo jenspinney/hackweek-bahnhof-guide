@@ -33,6 +33,8 @@ import java.util.List;
  */
 public class TrainListActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<DepartureContent.DepartureItem>> {
     private static final String TAG = TrainListActivity.class.getSimpleName();
+    public static final String LOCATION_ID = "location_id";
+    public static final String LOCATION_NAME = "location_name";
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -41,6 +43,8 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
     private boolean mTwoPane;
 
     private RecyclerView mRecyclerView;
+    private String mLocationName = "Nürnberg";
+    private String mLocationID = "8000284";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +72,21 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
             mTwoPane = true;
         }
 
+        mLocationName = getIntent().getStringExtra(TrainListActivity.LOCATION_NAME);
+        mLocationID = getIntent().getStringExtra(TrainListActivity.LOCATION_ID);
+
+        if (mLocationID == null) {
+            mLocationID = "8000284";
+        }
+
+        if (mLocationName == null) {
+            mLocationName = "Nürnberg";
+        }
+        Log.d(TAG, "Location ID = " + mLocationID);
+
+        TextView locationNameView = findViewById(R.id.tv_location_name);
+        locationNameView.setText(mLocationName);
+
         View recyclerView = findViewById(R.id.train_list);
         assert recyclerView != null;
         mRecyclerView = (RecyclerView) recyclerView;
@@ -83,7 +102,7 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
     @Override
     public Loader<List<DepartureContent.DepartureItem>> onCreateLoader(int i, Bundle bundle) {
         Log.d(TAG, "on-create-loader");
-        return new DepartureListLoader(TrainListActivity.this);
+        return new DepartureListLoader(TrainListActivity.this, mLocationID);
     }
 
 
@@ -111,7 +130,7 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
                 DepartureContent.DepartureItem item = (DepartureContent.DepartureItem) view.getTag();
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
-                    arguments.putString(TrainDetailFragment.ARG_ITEM_ID, item.id);
+                    arguments.putString(TrainDetailFragment.ARG_ITEM_ID, item.getId());
                     TrainDetailFragment fragment = new TrainDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
@@ -120,7 +139,7 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
                 } else {
                     Context context = view.getContext();
                     Intent intent = new Intent(context, TrainDetailActivity.class);
-                    intent.putExtra(TrainDetailFragment.ARG_ITEM_ID, item.id);
+                    intent.putExtra(TrainDetailFragment.ARG_ITEM_ID, item.getId());
 
                     context.startActivity(intent);
                 }
@@ -144,8 +163,8 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mDepartureTimeView.setText(DepartureContent.DepartureItem.DATE_FORMAT.format(mValues.get(position).departureTime));
-            holder.mContentView.setText(mValues.get(position).name);
+            holder.mDepartureTimeView.setText(DepartureContent.DepartureItem.DATE_FORMAT.format(mValues.get(position).getDepartureTime()));
+            holder.mContentView.setText(mValues.get(position).getName());
 
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);

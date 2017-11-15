@@ -7,6 +7,7 @@ import com.alibaba.fastjson.JSON;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -30,7 +31,14 @@ public class LoadDummyDepartureBoardTask implements IFetchDepartureBoardTask {
 
         String jsonArrayString = getJSONStringFromAsset("/v1/departureBoard/" + mLocationID + "?date=2017-11-15");
 
-        return DepartureContent.createDepartureItemsFromJSONString(jsonArrayString);
+        List<DepartureBoardJSONObject> objs = JSON.parseArray(jsonArrayString, DepartureBoardJSONObject.class);
+        LinkedList<DepartureContent.DepartureItem> items = new LinkedList<>();
+        for (DepartureBoardJSONObject topLevelJSONObject: objs) {
+            List<JourneyDetailItem> details = JSON.parseArray(getJSONStringFromAsset("/v1/journeyDetails/" + topLevelJSONObject.getDetailsId()), JourneyDetailItem.class);
+            DepartureContent.DepartureItem departureItem = new DepartureContent.DepartureItem(topLevelJSONObject, details);
+            items.add(departureItem);
+        }
+        return items;
     }
 
     private String getJSONStringFromAsset(String path) {
@@ -43,8 +51,9 @@ public class LoadDummyDepartureBoardTask implements IFetchDepartureBoardTask {
             is.close();
             jsonArrayString = new String(buffer, "UTF-8");
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.w(TAG, "Failed to load " + path);
         }
         return jsonArrayString;
     }
 }
+

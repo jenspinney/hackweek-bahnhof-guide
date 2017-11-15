@@ -19,6 +19,12 @@
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+        <TextView
+            android:id="@+id/tv_location_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            tools:text="Location" />
+
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout
