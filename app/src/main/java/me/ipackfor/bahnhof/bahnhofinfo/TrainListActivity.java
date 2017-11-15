@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.Loader;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -43,7 +44,7 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
     private boolean mTwoPane;
 
     private RecyclerView mRecyclerView;
-    private String mLocationName = "Nürnberg";
+    private String mLocationName = "Nürnberg Hbf";
     private String mLocationID = "8000284";
 
     @Override
@@ -72,20 +73,18 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
             mTwoPane = true;
         }
 
-        mLocationName = getIntent().getStringExtra(TrainListActivity.LOCATION_NAME);
-        mLocationID = getIntent().getStringExtra(TrainListActivity.LOCATION_ID);
+        Intent intentThisActivityWasCalledWith = getIntent();
 
-        if (mLocationID == null) {
-            mLocationID = "8000284";
+        if (intentThisActivityWasCalledWith != null) {
+            if (intentThisActivityWasCalledWith.hasExtra(TrainListActivity.LOCATION_NAME))
+                mLocationName = intentThisActivityWasCalledWith.getStringExtra(TrainListActivity.LOCATION_NAME);
+            if (intentThisActivityWasCalledWith.hasExtra(TrainListActivity.LOCATION_ID))
+                mLocationID = intentThisActivityWasCalledWith.getStringExtra(LOCATION_ID);
         }
 
-        if (mLocationName == null) {
-            mLocationName = "Nürnberg";
-        }
         Log.d(TAG, "Location ID = " + mLocationID);
 
-        TextView locationNameView = findViewById(R.id.tv_location_name);
-        locationNameView.setText(mLocationName);
+        setTitle(mLocationName + " Departures");
 
         View recyclerView = findViewById(R.id.train_list);
         assert recyclerView != null;
