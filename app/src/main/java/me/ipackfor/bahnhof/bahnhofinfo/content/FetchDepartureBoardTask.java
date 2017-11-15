@@ -2,23 +2,14 @@ package me.ipackfor.bahnhof.bahnhofinfo.content;
 
 import android.util.Log;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
-
-import me.ipackfor.bahnhof.bahnhofinfo.R;
-import me.ipackfor.bahnhof.bahnhofinfo.content.DepartureContent;
 
 public class FetchDepartureBoardTask implements IFetchDepartureBoardTask {
     private static final String TAG = FetchDepartureBoardTask.class.getSimpleName();
@@ -33,7 +24,7 @@ public class FetchDepartureBoardTask implements IFetchDepartureBoardTask {
     public List<DepartureContent.DepartureItem> Run() {
         Log.d(TAG, "Run");
         HttpURLConnection urlConnection = null;
-        LinkedList<DepartureContent.DepartureItem> items = new LinkedList<DepartureContent.DepartureItem>();
+        LinkedList<DepartureContent.DepartureItem> items1 = new LinkedList<>();
 
         try {
 
@@ -65,27 +56,23 @@ public class FetchDepartureBoardTask implements IFetchDepartureBoardTask {
             }
             scanner.close();
 
-            JSONArray departuresJSON = new JSONArray(response);
+            LinkedList<DepartureContent.DepartureItem> items = DepartureContent.createDepartureItemsFromJSONString(response);
 
-            for (int i=0; i < departuresJSON.length(); i++) {
-                items.add(new DepartureContent.DepartureItem(departuresJSON.getJSONObject(i)));
-            }
+            items1.addAll(items);
 
-            Log.d(TAG, "Run success! " + departuresJSON.length() + " items found.");
+            Log.d(TAG, "Run success! " + items1.size() + " items found.");
         } catch (MalformedURLException e) {
             Log.d(TAG, e.getMessage());
             e.printStackTrace();
         } catch (IOException e) {
             Log.d(TAG, e.getMessage());
             e.printStackTrace();
-        } catch (JSONException e) {
-            Log.d(TAG, e.getMessage());
-            e.printStackTrace();
         } finally {
             if (urlConnection != null)
                 urlConnection.disconnect();
 
-            return items;
+            return items1;
         }
     }
+
 }

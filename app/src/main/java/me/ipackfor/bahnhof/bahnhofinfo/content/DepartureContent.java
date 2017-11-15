@@ -1,6 +1,9 @@
 package me.ipackfor.bahnhof.bahnhofinfo.content;
 
+import android.support.annotation.NonNull;
 import android.util.Log;
+
+import com.alibaba.fastjson.JSON;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -37,18 +41,20 @@ public class DepartureContent {
         ITEM_MAP.put(item.id, item);
     }
 
+    @NonNull
+    public static LinkedList<DepartureItem> createDepartureItemsFromJSONString(String jsonArrayString) {
+        List<DepartureBoardJSONObject> objs = JSON.parseArray(jsonArrayString, DepartureBoardJSONObject.class);
+        LinkedList<DepartureItem> items = new LinkedList<>();
+        for (DepartureBoardJSONObject obj: objs) {
+            items.add(new DepartureItem(obj));
+        }
+        return items;
+    }
+
     /**
      * An item representing a single departure.
      */
     public static class DepartureItem {
-        public static final String DETAILS_ID = "detailsId";
-        public static final String NAME = "name";
-        public static final String TYPE = "type";
-        public static final String BOARD_ID = "boardId";
-        public static final String STOP_ID = "stopId";
-        public static final String STOP_NAME = "stopName";
-        public static final String TRACK = "track";
-        public static final String DATE_TIME = "dateTime";
         public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
         public final String id;
         public final String name;
@@ -57,46 +63,26 @@ public class DepartureContent {
         public final String stopId;
         public final String stopName;
         public final Date departureTime;
-
         public final String platform;
 
-        /* departureInfo has:
-                  {
-    "name": "ICE 1617",
-    "type": "ICE",
-    "boardId": 8000284,
-    "stopId": 8000284,
-    "stopName": "Nürnberg Hbf",
-    "dateTime": "2017-11-13T00:31",
-    "track": "8",
-    "detailsId": "614604%2F208451%2F397100%2F6318%2F80%3fstation_evaId%3D8000284"
-  }
-                 */
-        public DepartureItem(JSONObject obj) {
+
+        public DepartureItem(DepartureBoardJSONObject obj) {
+            this.id = obj.getDetailsId();
+            this.name = obj.getName();
+            this.type = obj.getType();
+            this.boardId = String.valueOf(obj.getBoardId());
+            this.stopId = String.valueOf(obj.getStopId());
+            this.stopName = obj.getStopName();
+            this.platform = obj.getTrack();
+
             Date departureTime;
-            this.id = getStringOrDefault(obj, DETAILS_ID);
-            this.name = getStringOrDefault(obj, NAME);
-            this.type = getStringOrDefault(obj, TYPE);
-            this.boardId = getStringOrDefault(obj, BOARD_ID);
-            this.stopId = getStringOrDefault(obj, STOP_ID);
-            this.stopName = getStringOrDefault(obj, STOP_NAME);
-            this.platform = getStringOrDefault(obj, TRACK);
             try{
-                departureTime = DATE_FORMAT.parse(getStringOrDefault(obj, DATE_TIME));
+                departureTime = DATE_FORMAT.parse(obj.getDateTime());
             } catch (ParseException e) {
                 e.printStackTrace();
                 departureTime = new Date();
             }
             this.departureTime = departureTime;
-        }
-
-        private String getStringOrDefault(JSONObject obj, String key) {
-            try {
-                return obj.getString(key);
-            } catch (JSONException e) {
-                e.printStackTrace();
-                return "";
-            }
         }
 
         @Override

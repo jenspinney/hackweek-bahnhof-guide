@@ -24,6 +24,6 @@ public class DepartureListLoader extends AsyncTaskLoader<List<DepartureContent.D
     @Override
     public List<DepartureContent.DepartureItem> loadInBackground() {
         Log.d(TAG, "load-in-background");
-        return FetchDepartureBoardTaskFactory.create(mContext, "").Run();
+        return FetchDepartureBoardTaskFactory.create(mContext, "8000284").Run();
     }
 }
