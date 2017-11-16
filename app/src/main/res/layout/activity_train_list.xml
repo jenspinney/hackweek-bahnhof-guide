@@ -23,7 +23,9 @@
             android:id="@+id/tv_location_name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            tools:text="Location" />
+            tools:text="Location"
+            android:paddingLeft="@dimen/text_margin"
+            android:paddingBottom="@dimen/text_margin"/>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -33,7 +35,10 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <include layout="@layout/train_list" />
+        <include
+            layout="@layout/train_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </FrameLayout>
 
     <android.support.design.widget.FloatingActionButton

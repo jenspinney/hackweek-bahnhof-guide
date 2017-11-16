@@ -5,20 +5,27 @@ import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 
+import org.joda.time.DateTime;
+
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+import me.ipackfor.bahnhof.bahnhofinfo.dbapi.UrlGenerator;
 
 public class LoadDummyDepartureBoardTask implements IFetchDepartureBoardTask {
     private static final String TAG = LoadDummyDepartureBoardTask.class.getSimpleName();
     public static final String TEST_DATA_PATH = "testdata";
     private final String mLocationID;
+    private final DateTime mDateTime;
     private final AssetManager mAssetManager;
 
-    public LoadDummyDepartureBoardTask(String locationID, AssetManager assetManager) {
+    public LoadDummyDepartureBoardTask(String locationID, DateTime dateTime, AssetManager assetManager) {
         mLocationID = locationID;
+        mDateTime = dateTime;
         mAssetManager = assetManager;
     }
 
@@ -29,7 +36,8 @@ public class LoadDummyDepartureBoardTask implements IFetchDepartureBoardTask {
             Log.i(TAG, "invalid location id: " + mLocationID);
         }
 
-        String jsonArrayString = getJSONStringFromAsset("/v1/departureBoard/" + mLocationID + "?date=2017-11-15");
+        String path = UrlGenerator.generateDepartureBoardURL("",  mLocationID , mDateTime);
+        String jsonArrayString = getJSONStringFromAsset(path);
 
         List<DepartureBoardJSONObject> objs = JSON.parseArray(jsonArrayString, DepartureBoardJSONObject.class);
         LinkedList<DepartureContent.DepartureItem> items = new LinkedList<>();

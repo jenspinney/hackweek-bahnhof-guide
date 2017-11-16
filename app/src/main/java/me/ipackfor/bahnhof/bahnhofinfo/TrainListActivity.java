@@ -19,9 +19,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 import me.ipackfor.bahnhof.bahnhofinfo.content.DepartureContent;
 import me.ipackfor.bahnhof.bahnhofinfo.content.DepartureListLoader;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -46,6 +51,7 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
     private RecyclerView mRecyclerView;
     private String mLocationName = "Nürnberg Hbf";
     private String mLocationID = "8000284";
+    private DateTime mDate = new DateTime(2017, 11, 15, 0, 0, 0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +91,8 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
         Log.d(TAG, "Location ID = " + mLocationID);
 
         setTitle(mLocationName + " Departures");
+        DateTimeFormatter fmt = DateTimeFormat.mediumDate();
+        ((TextView) findViewById(R.id.tv_location_name)).setText(fmt.print(mDate));
 
         View recyclerView = findViewById(R.id.train_list);
         assert recyclerView != null;
@@ -101,7 +109,7 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
     @Override
     public Loader<List<DepartureContent.DepartureItem>> onCreateLoader(int i, Bundle bundle) {
         Log.d(TAG, "on-create-loader");
-        return new DepartureListLoader(TrainListActivity.this, mLocationID);
+        return new DepartureListLoader(TrainListActivity.this, mLocationID, mDate);
     }
 
 
@@ -162,7 +170,9 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mDepartureTimeView.setText(DepartureContent.DepartureItem.DATE_FORMAT.format(mValues.get(position).getDepartureTime()));
+            DateTimeFormatter fmt = DateTimeFormat.shortTime();
+
+            holder.mDepartureTimeView.setText(fmt.print(new DateTime(mValues.get(position).getDepartureTime())));
             holder.mContentView.setText(mValues.get(position).getName());
 
             holder.itemView.setTag(mValues.get(position));
