@@ -6,12 +6,9 @@ import android.content.Intent;
 import android.content.Loader;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +23,6 @@ import org.joda.time.format.DateTimeFormatter;
 import me.ipackfor.bahnhof.bahnhofinfo.content.DepartureContent;
 import me.ipackfor.bahnhof.bahnhofinfo.content.DepartureListLoader;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -61,15 +57,6 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         if (findViewById(R.id.train_detail_container) != null) {
             // The detail container view will be present only in the
@@ -126,11 +113,13 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
     }
 
     public static class SimpleItemRecyclerViewAdapter
-            extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
+            extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private final TrainListActivity mParentActivity;
         private final List<DepartureContent.DepartureItem> mValues;
         private final boolean mTwoPane;
+        private static final int TYPE_HEADER = 0;
+        private static final int TYPE_ITEM = 1;
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -162,21 +151,40 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
         }
 
         @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.train_list_content, parent, false);
-            return new ViewHolder(view);
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            if (viewType == TYPE_HEADER) {
+                View view = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.train_list_header, parent, false);
+                return new HeaderViewHolder(view);
+            } else {
+                View view = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.train_list_content, parent, false);
+                return new ViewHolder(view);
+            }
+
         }
 
         @Override
-        public void onBindViewHolder(final ViewHolder holder, int position) {
-            DateTimeFormatter fmt = DateTimeFormat.shortTime();
+        public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
+            if(holder instanceof HeaderViewHolder){
+                HeaderViewHolder header = (HeaderViewHolder) holder;
+                header.mDepartureTimeView.setText("Time");
+                header.mTrainNameView.setText("Train");
+                header.mDestinationView.setText("Destination");
+                header.mTrackNumberView.setText("Track");
+            } else {
+                ViewHolder itemViewHolder = (ViewHolder) holder;
+                DateTimeFormatter fmt = DateTimeFormat.shortTime();
 
-            holder.mDepartureTimeView.setText(fmt.print(new DateTime(mValues.get(position).getDepartureTime())));
-            holder.mContentView.setText(mValues.get(position).getName());
+                DepartureContent.DepartureItem item = mValues.get(position - 1);
+                itemViewHolder.mDepartureTimeView.setText(fmt.print(new DateTime(item.getDepartureTime())));
+                itemViewHolder.mTrainNameView.setText(item.getName());
+                itemViewHolder.mDestinationView.setText(item.getDestinationStopName());
+                itemViewHolder.mTrackNumberView.setText(item.getPlatform());
 
-            holder.itemView.setTag(mValues.get(position));
-            holder.itemView.setOnClickListener(mOnClickListener);
+                itemViewHolder.itemView.setTag(item);
+                itemViewHolder.itemView.setOnClickListener(mOnClickListener);
+            }
         }
 
         @Override
@@ -184,14 +192,44 @@ public class TrainListActivity extends AppCompatActivity implements LoaderManage
             return mValues.size();
         }
 
+        @Override
+        public int getItemViewType(int position) {
+            if (isPositionHeader(position))
+                return TYPE_HEADER;
+            return TYPE_ITEM;
+        }
+
+        private boolean isPositionHeader(int position) {
+            return position == 0;
+        }
+
         class ViewHolder extends RecyclerView.ViewHolder {
             final TextView mDepartureTimeView;
-            final TextView mContentView;
+            final TextView mTrainNameView;
+            final TextView mDestinationView;
+            final TextView mTrackNumberView;
 
             ViewHolder(View view) {
                 super(view);
-                mDepartureTimeView = (TextView) view.findViewById(R.id.departure_time);
-                mContentView = (TextView) view.findViewById(R.id.content);
+                mDepartureTimeView = view.findViewById(R.id.departure_time);
+                mTrainNameView = view.findViewById(R.id.train_name);
+                mDestinationView = view.findViewById(R.id.train_destination);
+                mTrackNumberView = view.findViewById(R.id.train_track);
+            }
+        }
+
+        class HeaderViewHolder extends RecyclerView.ViewHolder{
+            final TextView mDepartureTimeView;
+            final TextView mTrainNameView;
+            final TextView mDestinationView;
+            final TextView mTrackNumberView;
+
+            public HeaderViewHolder(View view) {
+                super(view);
+                mDepartureTimeView = view.findViewById(R.id.departure_time);
+                mTrainNameView = view.findViewById(R.id.train_name);
+                mDestinationView = view.findViewById(R.id.train_destination);
+                mTrackNumberView = view.findViewById(R.id.train_track);
             }
         }
     }
