@@ -3,6 +3,7 @@
 For Hackweek, I set out to make a simple Android app to learn the basics of Android development. I decided to make an app that would show all the trains leaving from a given German train station for a given day/time. When a user clicks on a particular train, they should see a list of all of the stops of that train.
 
 I got the basic idea working, even if it doesn't look particularly pretty:
+
 <img src="/Screenshot_20171116-225957.png" width="250" />
 <img src="/Screenshot_20171116-230003.png" width="250" />
 
